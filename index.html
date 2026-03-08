@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./src/css/output.css" rel="stylesheet">
+    <link href="/src/css/app.css" rel="stylesheet">
     <title>Ronel Florida | Web Developer</title>
 </head>
 <body x-data="portfolio()" @scroll.window="handleScroll()" class="font-fira-code bg-wp-dark text-white">
@@ -22,10 +22,10 @@
     </nav>
 
     <!-- Home -->
-    <section class="relative min-h-screen pt-13.5 flex items-center justify-start bg-cover bg-no-repeat bg-[url(/src/images/home-background.webp)]">
+    <section class="relative min-h-screen pt-13.5 flex items-center justify-start bg-cover bg-no-repeat bg-[url(/images/home-background.webp)]">
         <div class=" max-w-225 w-[90%] mx-auto">
             <p class="tracking-wider    text-[12px] sm:text-sm mb-6 inline-flex items-center gap-1 bg-wp-red py-2.75 px-3 rounded-lg">
-                <img width="19" height="19" src="./src//images/angellist.svg" alt="">
+                <img width="19" height="19" src="/images/angellist.svg" alt="">
                 Hi There! I'm Ronel Florida
             </p>
             <h1 class=" text-[clamp(16px,1.896vw,27px)] tracking-wider mb-6 leading-6 md:leading-9">
@@ -84,13 +84,13 @@
                     <p class="text-[clamp(12px,1.16vw,14px)] font-bold tracking-wide mb-5">
                         Let's connect and create something amazing together!
                     </p>
-                    <a href="./src/resume/ronelflorida-resume.pdf" target="_blank" class="tracking-wide inline-flex items-center gap-2 py-2 px-4 bg-wp-red text-white text-sm font-semibold rounded-md shadow-lg shadow-wp-red-500 hover:shadow-wp-red-500 focus:outline-none">
+                    <a href="/resume/ronelflorida-resume.pdf" target="_blank" class="tracking-wide inline-flex items-center gap-2 py-2 px-4 bg-wp-red text-white text-sm font-semibold rounded-md shadow-lg shadow-wp-red-500 hover:shadow-wp-red-500 focus:outline-none">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M144 480c-79.5 0-144-64.5-144-144 0-63.4 41-117.2 97.9-136.5-1.3-7.7-1.9-15.5-1.9-23.5 0-79.5 64.5-144 144-144 55.4 0 103.5 31.3 127.6 77.1 14.2-8.3 30.8-13.1 48.4-13.1 53 0 96 43 96 96 0 15.7-3.8 30.6-10.5 43.7 44 20.3 74.5 64.7 74.5 116.3 0 70.7-57.3 128-128 128l-304 0zM377 313c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-31 31 0-102.1c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 102.1-31-31c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l72 72c9.4 9.4 24.6 9.4 33.9 0l72-72z"/></svg>
                         Download CV
                     </a>
                 </div>
                 <div class="order-1 md:order-2 md:justify-self-center-safe">
-                    <img class="w-full" src="./src//images/about/ronel_picture.jpg" alt="Image of Ronel Florida">
+                    <img class="w-full" src="/images/about/ronel_picture.jpg" alt="Image of Ronel Florida">
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
             </div>
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                 <div class="relative group overflow-hidden rounded-md border border-transparent hover:border-wp-red">
-                    <img src="./src/images/projects/lnk-thumbnail.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/projects/lnk-thumbnail.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute inset-0 bg-wp-dark/90 opacity-0 group-hover:opacity-100 flex flex-col gap-3 items-center justify-center transition-opacity duration-300">
                         <h4 class="font-bold tracking-wide text-xl text-center">Lnk</h4>
                         <p class="font-bold text-white tracking-wide text-xs text-center">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-md border border-transparent hover:border-wp-red">
-                    <img src="./src/images/projects/help-central-thumbnail.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/projects/help-central-thumbnail.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute inset-0 bg-wp-dark/90 opacity-0 group-hover:opacity-100 flex flex-col gap-3 items-center justify-center transition-opacity duration-300">
                         <h4 class="font-bold tracking-wide text-xl text-center">Ticketing System</h4>
                         <p class="font-bold text-white tracking-wide text-xs text-center">
@@ -145,7 +145,7 @@
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-md border border-transparent hover:border-wp-red">
-                    <img src="./src/images/projects/url-shortining-landing-page.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/projects/url-shortining-landing-page.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute inset-0 bg-wp-dark/90 opacity-0 group-hover:opacity-100 flex flex-col gap-3 items-center justify-center transition-opacity duration-300">
                         <h4 class="font-bold tracking-wide text-xl text-center">Url Shortening Landing page</h4>
                         <p class="font-bold text-white tracking-wide text-xs text-center">
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-md border border-transparent hover:border-wp-red">
-                    <img src="./src/images/projects/sunnyside-landing-page.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/projects/sunnyside-landing-page.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute inset-0 bg-wp-dark/90 opacity-0 group-hover:opacity-100 flex flex-col gap-3 items-center justify-center transition-opacity duration-300">
                         <h4 class="font-bold tracking-wide text-xl text-center">Sunnyside Landing Page</h4>
                         <p class="font-bold text-white tracking-wide text-xs text-center">
@@ -183,7 +183,7 @@
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-md border border-transparent hover:border-wp-red">
-                    <img src="./src/images/projects/fylo-landing-page.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/projects/fylo-landing-page.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute inset-0 bg-wp-dark/90 opacity-0 group-hover:opacity-100 flex flex-col gap-3 items-center justify-center transition-opacity duration-300">
                         <h4 class="font-bold tracking-wide text-xl text-center">Fylo Landing Page</h4>
                         <p class="font-bold text-white tracking-wide text-xs text-center">
@@ -202,7 +202,7 @@
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-md border border-transparent hover:border-wp-red">
-                    <img src="./src/images/projects/space-tourism-website.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/projects/space-tourism-website.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute inset-0 bg-wp-dark/90 opacity-0 group-hover:opacity-100 flex flex-col gap-3 items-center justify-center transition-opacity duration-300">
                         <h4 class="font-bold tracking-wide text-xl text-center">Space Tourism Multi-Page Website</h4>
                         <p class="font-bold text-white tracking-wide text-xs text-center">
@@ -251,27 +251,27 @@
                     </div>
                     <div class="grid grid-cols-4 gap-4">
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/Html.png" alt="HTML Icon">
+                            <img class="w-11 h-auto" src="/images/skills/Html.png" alt="HTML Icon">
                             <p class=" inline-block text-sm tracking-wide">Html</p>
                         </div>
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/css.png" alt="Css Icon">
+                            <img class="w-11 h-auto" src="/images/skills/css.png" alt="Css Icon">
                             <p class=" inline-block text-sm tracking-wide">Css</p>
                         </div>
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/Javascript.png" alt="Javascript Icon">
+                            <img class="w-11 h-auto" src="/images/skills/Javascript.png" alt="Javascript Icon">
                             <p class=" inline-block text-sm tracking-wide">Javascript</p>
                         </div>
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/React.png" alt="ReactJS Icon">
+                            <img class="w-11 h-auto" src="/images/skills/React.png" alt="ReactJS Icon">
                             <p class=" inline-block text-sm tracking-wide">React</p>
                         </div>
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/tailwind.png" alt="TailwindCSS Icon">
+                            <img class="w-11 h-auto" src="/images/skills/tailwind.png" alt="TailwindCSS Icon">
                             <p class=" inline-block text-sm tracking-wide">Tailwind</p>
                         </div>
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/alpine.png" alt="Alpine Icon">
+                            <img class="w-11 h-auto" src="/images/skills/alpine.png" alt="Alpine Icon">
                             <p class=" inline-block text-sm tracking-wide">Alpine</p>
                         </div>
                     </div>
@@ -287,19 +287,19 @@
                     </div>
                     <div class="grid grid-cols-4 gap-4">
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/laravel.png" alt="Laravel Icon">
+                            <img class="w-11 h-auto" src="/images/skills/laravel.png" alt="Laravel Icon">
                             <p class=" inline-block text-sm tracking-wide">Laravel</p>
                         </div>
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/livewire.png" alt="Livewire Icon">
+                            <img class="w-11 h-auto" src="/images/skills/livewire.png" alt="Livewire Icon">
                             <p class=" inline-block text-sm tracking-wide">Livewire</p>
                         </div>
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/node.png" alt="Nodejs Icon">
+                            <img class="w-11 h-auto" src="/images/skills/node.png" alt="Nodejs Icon">
                             <p class=" inline-block text-sm tracking-wide">Node</p>
                         </div>
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/Mysql.png" alt="MySql Icon">
+                            <img class="w-11 h-auto" src="/images/skills/Mysql.png" alt="MySql Icon">
                             <p class=" inline-block text-sm tracking-wide">MySql</p>
                         </div>
                     </div>
@@ -315,11 +315,11 @@
                     </div>
                     <div class="grid grid-cols-4 gap-4">
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/git.png" alt="Git Icon">
+                            <img class="w-11 h-auto" src="/images/skills/git.png" alt="Git Icon">
                             <p class=" inline-block text-sm tracking-wide">Git</p>
                         </div>
                         <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="./src/images/skills/figma.png" alt="Figma Icon">
+                            <img class="w-11 h-auto" src="/images/skills/figma.png" alt="Figma Icon">
                             <p class=" inline-block text-sm tracking-wide">Figma</p>
                         </div>
                     </div>
@@ -358,7 +358,7 @@
         </div>
     </footer>
 
-    <script defer type="module" src="./src/js/app.js"></script>
+    <script defer type="module" src="/src/js/app.js"></script>
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.data('portfolio', () => ({

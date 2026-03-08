@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+
+    --font-fira-code: "Fira Code", sans-serif;
+
+    --color-wp-red: #C63D56;
+    --color-wp-red-500: rgb(198, 61,86, 0.5);
+    --color-wp-red-300: rgb(198, 61,86, 0.3);
+    --color-wp-dark: #191919;
+}
+
+.mouse {
+	width: 22px;
+	height: 31px;
+	border: 2px solid #ffffff;
+	border-radius: 60px;
+	position: relative;
+}
+.mouse::before {
+	content: '';
+	width: 5px;
+	height: 5px;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #ffffff;
+	border-radius: 50%;
+	opacity: 1;
+	animation: wheel 1s infinite;
+	-webkit-animation: wheel 1s infinite;
+}
