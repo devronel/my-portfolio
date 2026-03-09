@@ -357,32 +357,32 @@
                 </div>
                 <div class=" border border-wp-red rounded-md py-5 px-4">
                     <h5 class="font-medium text-lg mb-5">SEND MESSAGE</h5>
-                    <form action="">
+                    <div>
                         <div class="flex flex-col mb-6">
                             <label for="name" class="tracking-wide text-sm mb-1">
                                 Name
                             </label>
-                            <input type="text" name="name" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
+                            <input x-model="name" type="text" name="name" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
                         </div>
                         <div class="flex flex-col mb-6">
                             <label for="name" class="tracking-wide text-sm mb-1">
                                 Email
                             </label>
-                            <input type="text" name="email" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
+                            <input x-model="email" type="text" name="email" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
                         </div>
                         <div class="flex flex-col mb-6">
                             <label for="name" class="tracking-wide text-sm mb-1">
                                 Message
                             </label>
-                            <textarea name="message" cols="30" rows="4" class="tracking-wide py-2 px-3 bg-[#292929] outline-none"></textarea>
+                            <textarea x-model="message" name="message" cols="30" rows="4" class="tracking-wide py-2 px-3 bg-[#292929] outline-none"></textarea>
                         </div>
                         <div class=" flex items-center justify-end">
-                            <button class="hover:bg-wp-red transition-all text-sm tracking-wide py-2 px-3 border border-wp-red rounded-lg inline-flex items-center gap-2">
+                            <button x-on:click="sendEmail()" type="button" class="hover:bg-wp-red transition-all text-sm tracking-wide py-2 px-3 border border-wp-red rounded-lg inline-flex items-center gap-2">
                                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9L229.2 276.1c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8l496.9-178z"/></svg>
                                 Send Message
                             </button>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -423,11 +423,31 @@
         document.addEventListener('alpine:init', () => {
             Alpine.data('portfolio', () => ({
                 scrolled: false,
+                name: '',
+                email: '',
+                message: '',
                 init(){
                     this.handleScroll()
                 },
                 handleScroll() {
                     this.scrolled = window.scrollY > 50
+                },
+                sendEmail(){
+
+                    const data = {
+                        name: this.name,
+                        email: this.email,
+                        message: this.message
+                    }
+                    
+                    emailjs.send('service_gn7vztk', 'template_4yhup3a', data, {
+                            publicKey: 'VFk7agYjf_uCW_tqW',
+                        })
+                        .then((response) => {
+                            console.log('SUCCESS!', response.status, response.text);
+                        },(err) => {
+                            console.log('FAILED...', err);
+                        });
                 }
             }))
         })
