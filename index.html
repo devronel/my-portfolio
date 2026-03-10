@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ronel Florida | Web Developer</title>
-  <script type="module" crossorigin src="/my-portfolio/assets/index-BIOZBYBC.js"></script>
-  <link rel="stylesheet" crossorigin href="/my-portfolio/assets/index-Rfd_WhoH.css">
+  <script type="module" crossorigin src="/my-portfolio/assets/index-B9bQjmIA.js"></script>
+  <link rel="stylesheet" crossorigin href="/my-portfolio/assets/index-2QJZrvQU.css">
 </head>
 <body x-data="portfolio()" @scroll.window="handleScroll()" class="font-fira-code bg-wp-dark text-white">
 
@@ -358,32 +358,36 @@
                 </div>
                 <div class=" border border-wp-red rounded-md py-5 px-4">
                     <h5 class="font-medium text-lg mb-5">SEND MESSAGE</h5>
-                    <form action="">
+                    <div>
                         <div class="flex flex-col mb-6">
                             <label for="name" class="tracking-wide text-sm mb-1">
                                 Name
                             </label>
-                            <input type="text" name="name" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
+                            <input x-model="name" type="text" name="name" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
+                            <p x-show="error.name" x-text="error.name" class="text-wp-red text-sm mt-1"></p>
                         </div>
                         <div class="flex flex-col mb-6">
                             <label for="name" class="tracking-wide text-sm mb-1">
                                 Email
                             </label>
-                            <input type="text" name="email" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
+                            <input x-model="email" type="text" name="email" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
+                            <p x-show="error.email" x-text="error.email" class="text-wp-red text-sm mt-1"></p>
                         </div>
                         <div class="flex flex-col mb-6">
                             <label for="name" class="tracking-wide text-sm mb-1">
                                 Message
                             </label>
-                            <textarea name="message" cols="30" rows="4" class="tracking-wide py-2 px-3 bg-[#292929] outline-none"></textarea>
+                            <textarea x-model="message" name="message" cols="30" rows="4" class="tracking-wide py-2 px-3 bg-[#292929] outline-none"></textarea>
+                            <p x-show="error.message" x-text="error.message" class="text-wp-red text-sm mt-1"></p>
                         </div>
+                        <input type="text" x-model="website" class="hidden">
                         <div class=" flex items-center justify-end">
-                            <button class="hover:bg-wp-red transition-all text-sm tracking-wide py-2 px-3 border border-wp-red rounded-lg inline-flex items-center gap-2">
+                            <button x-on:click="sendEmail()" :disabled="isSending" type="button" class="hover:bg-wp-red cursor-pointer transition-all text-sm tracking-wide py-2 px-3 border border-wp-red rounded-lg inline-flex items-center gap-2">
                                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9L229.2 276.1c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8l496.9-178z"/></svg>
                                 Send Message
                             </button>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -423,11 +427,66 @@
         document.addEventListener('alpine:init', () => {
             Alpine.data('portfolio', () => ({
                 scrolled: false,
+                name: '',
+                email: '',
+                message: '',
+                website: '',
+                isSending: false,
+                error: {},
                 init(){
                     this.handleScroll()
                 },
                 handleScroll() {
                     this.scrolled = window.scrollY > 50
+                },
+                sendEmail(){
+
+                    if (this.website !== '') {
+                        return;
+                    }
+
+                    this.isSending = true
+                    this.error = {};
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                    if (this.name.trim() === '') {
+                        this.error.name = 'Name cannot be empty';
+                    }
+
+                    if (this.email.trim() === '') {
+                        this.error.email = 'Email cannot be empty';
+                    } else if (!emailPattern.test(this.email)) {
+                        this.error.email = 'Email is not valid';
+                    }
+
+                    if (this.message.trim() === '') {
+                        this.error.message = 'Message cannot be empty';
+                    }
+
+                    if (Object.keys(this.error).length > 0) {
+                        this.isSending = false
+                        return;
+                    }
+
+                    const data = {
+                        name: this.name,
+                        email: this.email,
+                        message: this.message
+                    }
+                    
+                    emailjs.send('service_gn7vztk', 'template_4yhup3a', data, {
+                            publicKey: 'VFk7agYjf_uCW_tqW',
+                        })
+                        .then((response) => {
+                            this.isSending = false
+                            this.name = '';
+                            this.email = '';
+                            this.message = '';
+                            alert('Thank you! Your message has been sent successfully. I will get back to you as soon as possible.')
+                        },(err) => {
+                            this.isSending = false
+                            alert("Something's Wrong");
+                        });
                 }
             }))
         })
