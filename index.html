@@ -3,37 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Ronel Florida — Full-Stack Developer specializing in responsive front-end interfaces and back-end web applications. Built with Laravel, React, and modern web technologies.">
+    <meta name="keywords" content="Ronel Florida, web developer, full-stack developer, front-end developer, Laravel, React, portfolio, Philippines">
+    <meta name="author" content="Ronel Florida">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ronel Florida | Full-Stack Developer">
+    <meta property="og:description" content="Full-Stack Developer building responsive web applications with Laravel, React, and modern technologies.">
+    <meta property="og:url" content="https://devronel.github.io/my-portfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/about/ronel_picture.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ronel Florida | Full-Stack Developer">
+    <meta name="twitter:description" content="Full-Stack Developer building responsive web applications with Laravel, React, and modern technologies.">
+    <meta name="twitter:image" content="/images/about/ronel_picture.jpg">
+
     <link href="/src/css/app.css" rel="stylesheet">
-    <title>Ronel Florida | Web Developer</title>
+    <title>Ronel Florida | Full-Stack Developer</title>
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ronel Florida",
+        "jobTitle": "Full-Stack Developer",
+        "url": "https://devronel.github.io/my-portfolio/",
+        "sameAs": [
+            "https://github.com/devronel",
+            "https://www.linkedin.com/in/ronelflorida/",
+            "https://web.facebook.com/ronelflorida28/"
+        ]
+    }
+    </script>
 </head>
-<body x-data="portfolio()" @scroll.window="handleScroll()" class="font-fira-code bg-wp-dark text-white">
+<body x-data="portfolio()" @scroll.window="handleScroll" class="font-fira-code bg-wp-dark text-white">
 
     <!-- Nav -->
     <nav :class="scrolled ? 'bg-wp-dark border-b border-wp-red' : ''" class="fixed top-0 left-0 right-0 z-20 py-3">
         <div class="text-white max-w-301.5 w-[90%] mx-auto flex items-center justify-between">
-            <a href="" class="font-bold text-[1.1875rem]">@rnl_dev<span class="text-wp-red">.</span></a>
+            <a href="#home" class="font-bold text-[1.1875rem]">@rnl_dev<span class="text-wp-red">.</span></a>
             <ul class="hidden sm:flex items-center gap-7 text-sm">
-                <li><a href="" class="hover:text-wp-red">About</a></li>
-                <li><a href="" class="hover:text-wp-red">Projects</a></li>
-                <li><a href="" class="hover:text-wp-red">Skills</a></li>
-                <li><a href="" class="hover:text-wp-red">Contact</a></li>
+                <li><a href="#about" class="hover:text-wp-red">About</a></li>
+                <li><a href="#projects" class="hover:text-wp-red">Projects</a></li>
+                <li><a href="#skills" class="hover:text-wp-red">Skills</a></li>
+                <li><a href="#contact" class="hover:text-wp-red">Contact</a></li>
             </ul>
+            <button @click="mobileNavOpen = !mobileNavOpen" class="sm:hidden p-2 focus:outline-none">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+            </button>
+            <div x-show="mobileNavOpen" @click.outside="mobileNavOpen = false" class="absolute top-full left-0 right-0 bg-wp-dark border-b border-wp-red sm:hidden">
+                <ul class="flex flex-col items-center gap-4 py-4 text-sm">
+                    <li><a href="#about" @click="mobileNavOpen = false" class="hover:text-wp-red">About</a></li>
+                    <li><a href="#projects" @click="mobileNavOpen = false" class="hover:text-wp-red">Projects</a></li>
+                    <li><a href="#skills" @click="mobileNavOpen = false" class="hover:text-wp-red">Skills</a></li>
+                    <li><a href="#contact" @click="mobileNavOpen = false" class="hover:text-wp-red">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!-- Home -->
-    <section class="relative min-h-screen pt-13.5 flex items-center justify-start bg-cover bg-no-repeat bg-[url(/images/home-background.webp)]">
+    <section id="home" class="relative min-h-screen pt-13.5 flex items-center justify-start bg-cover bg-no-repeat bg-[url(/images/home-background.webp)]">
         <div class=" max-w-225 w-[90%] mx-auto">
-            <p class="tracking-wider    text-[12px] sm:text-sm mb-6 inline-flex items-center gap-1 bg-wp-red py-2.75 px-3 rounded-lg">
+            <p class="tracking-wider text-[12px] sm:text-sm mb-6 inline-flex items-center gap-1 bg-wp-red py-2.75 px-3 rounded-lg">
                 <img width="19" height="19" src="/images/angellist.svg" alt="">
-                Hi There! I'm Ronel Florida
+                Hi, I'm Ronel Florida
             </p>
-            <h1 class=" text-[clamp(16px,1.896vw,27px)] tracking-wider mb-6 leading-6 md:leading-9">
-                A <span class="text-wp-red font-bold">Software Developer </span>
-                with experience in Front-end development and currently expanding expertise in Back-end technologies to build Full-stack
+            <h1 class="text-[clamp(16px,1.896vw,27px)] tracking-wider mb-6 leading-6 md:leading-9">
+                <span class="text-wp-red font-bold">Full-Stack Developer</span> with experience building responsive Front-end interfaces and Back-end
                 <span class="text-wp-red font-bold"> Web Applications.</span>
             </h1>
-            <a href="#" class="tracking-wider mb-6 py-2 px-4 inline-flex items-center gap-2 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 focus:outline-none">
+            <a href="#projects" class="tracking-wider mb-6 py-2 px-4 inline-flex items-center gap-2 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 448 512"><path fill="rgb(255, 255, 255)" d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-242.7c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32L64 32zm32 96c0-17.7 14.3-32 32-32l160 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-160 0c-17.7 0-32-14.3-32-32l0-64zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
                 Projects
             </a>
@@ -57,32 +101,27 @@
     </section>
 
     <!-- About -->
-    <section class="h-auto py-14.75">
+    <section id="about" class="h-auto py-14.75">
         <div class="max-w-301.5 w-[90%] mx-auto">
             <div class=" text-center max-w-169 mx-auto mb-15">
                 <h2 class="font-medium text-[clamp(16px,2.32vw,28px)] tracking-wide">About Me</h2>
                 <p class="text-[clamp(12px,1.16vw,14px)] tracking-wide">
-                    Here you will find more information about me, what I do, and my current skills mostly in terms of programming
+                    A brief overview of my background, expertise, and the technologies I work with
                 </p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="order-2 md:order-1">
                     <h3 class="font-bold text-[clamp(16px,1.65vw,20px)] tracking-wide mb-5">
-                        Get to know me<span class=" text-wp-red">!</span>
+                        Who I am<span class=" text-wp-red">?</span>
                     </h3>
                     <p class="text-[clamp(12px,1.16vw,14px)] tracking-wide leading-6 mb-5">
-                        A Web Developer with a Bachelor's degree in Information Technology, self-taught in modern web development and experienced in building applications with the Laravel framework.
+                        A Web Developer with a Bachelor's degree in Information Technology and hands-on experience building applications with the Laravel framework. I specialize in crafting responsive, user-friendly interfaces and am actively expanding my expertise into full-stack development.
                     </p>
                     <p class="text-[clamp(12px,1.16vw,14px)] tracking-wide leading-6 mb-5">
-                        Ready to embark on the next chapter of my journey, I'm excited to
-                        leverage my skills and passion to contribute to meaningful
-                        projects that make a difference. Whether it's building intuitive
-                        interfaces, optimizing user experiences, or exploring new web
-                        development technologies, I'm always eager to take on new
-                        challenges and learn something new along the way.
+                        I focus on writing clean, maintainable code and delivering intuitive user experiences that align with business goals. Whether working on the front end or diving into back-end logic, I approach every project with attention to detail and a commitment to quality.
                     </p>
                     <p class="text-[clamp(12px,1.16vw,14px)] font-bold tracking-wide mb-5">
-                        Let's connect and create something amazing together!
+                        I'm always open to new opportunities and collaborations — let's build something great together.
                     </p>
                     <a href="./resume/ronelflorida-resume.pdf" target="_blank" class="tracking-wide inline-flex items-center gap-2 py-2 px-4 bg-wp-red text-white text-sm font-semibold rounded-md shadow-lg shadow-wp-red-500 hover:shadow-wp-red-500 focus:outline-none">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M144 480c-79.5 0-144-64.5-144-144 0-63.4 41-117.2 97.9-136.5-1.3-7.7-1.9-15.5-1.9-23.5 0-79.5 64.5-144 144-144 55.4 0 103.5 31.3 127.6 77.1 14.2-8.3 30.8-13.1 48.4-13.1 53 0 96 43 96 96 0 15.7-3.8 30.6-10.5 43.7 44 20.3 74.5 64.7 74.5 116.3 0 70.7-57.3 128-128 128l-304 0zM377 313c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-31 31 0-102.1c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 102.1-31-31c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l72 72c9.4 9.4 24.6 9.4 33.9 0l72-72z"/></svg>
@@ -97,7 +136,7 @@
     </section>
 
     <!-- Projects -->
-    <section class="h-auto py-14.75">
+    <section id="projects" class="h-auto py-14.75">
         <div class="max-w-301.5 w-[90%] mx-auto">
             <div class=" text-center max-w-169 mx-auto mb-7.5">
                 <h2 class="font-medium text-[clamp(16px,2.32vw,28px)] tracking-wide">My Works</h2>
@@ -107,7 +146,7 @@
             </div>
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                 <div class="relative group overflow-hidden rounded-md border border-transparent hover:border-wp-red">
-                    <img src="/images/projects/lnk-thumbnail.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/projects/lnk-thumbnail.webp" alt="Lnk project screenshot" class="rounded-md group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute inset-0 bg-wp-dark/90 opacity-0 group-hover:opacity-100 flex flex-col gap-3 items-center justify-center transition-opacity duration-300">
                         <h4 class="font-bold tracking-wide text-xl text-center">Lnk</h4>
                         <p class="font-bold text-white tracking-wide text-xs text-center">
@@ -126,7 +165,7 @@
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-md border border-transparent hover:border-wp-red">
-                    <img src="/images/projects/fylo-landing-page.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/projects/fylo-landing-page.webp" alt="Fylo landing page project screenshot" class="rounded-md group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute inset-0 bg-wp-dark/90 opacity-0 group-hover:opacity-100 flex flex-col gap-3 items-center justify-center transition-opacity duration-300">
                         <h4 class="font-bold tracking-wide text-xl text-center">Fylo Landing Page</h4>
                         <p class="font-bold text-white tracking-wide text-xs text-center">
@@ -145,9 +184,9 @@
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-md border border-transparent hover:border-wp-red">
-                    <img src="/images/projects/url-shortining-landing-page.webp" alt="" class="rounded-md group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/projects/url-shortining-landing-page.webp" alt="URL shortening landing page project screenshot" class="rounded-md group-hover:scale-105 transition-transform duration-300">
                     <div class="absolute inset-0 bg-wp-dark/90 opacity-0 group-hover:opacity-100 flex flex-col gap-3 items-center justify-center transition-opacity duration-300">
-                        <h4 class="font-bold tracking-wide text-xl text-center">Url Shortening Landing page</h4>
+                        <h4 class="font-bold tracking-wide text-xl text-center">URL Shortening Landing Page</h4>
                         <p class="font-bold text-white tracking-wide text-xs text-center">
                             Html | Scss | Javascript | Shrtcode API
                         </p>
@@ -165,7 +204,7 @@
                 </div>
             </div>
             <div class="flex items-center justify-center">
-                <a href="#" class="hover:bg-wp-red transition-all text-sm tracking-wide font-bold py-2 px-3 border border-wp-red rounded-lg inline-flex items-center gap-2">
+                <a href="https://github.com/devronel" target="_blank" class="hover:bg-wp-red transition-all text-sm tracking-wide font-bold py-2 px-3 border border-wp-red rounded-lg inline-flex items-center gap-2">
                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M160.5-26.4c9.3-7.8 23-7.5 31.9 .9 12.3 11.6 23.3 24.4 33.9 37.4 13.5 16.5 29.7 38.3 45.3 64.2 5.2-6.8 10-12.8 14.2-17.9 1.1-1.3 2.2-2.7 3.3-4.1 7.9-9.8 17.7-22.1 30.8-22.1 13.4 0 22.8 11.9 30.8 22.1 1.3 1.7 2.6 3.3 3.9 4.8 10.3 12.4 24 30.3 37.7 52.4 27.2 43.9 55.6 106.4 55.6 176.6 0 123.7-100.3 224-224 224S0 411.7 0 288c0-91.1 41.1-170 80.5-225 19.9-27.7 39.7-49.9 54.6-65.1 8.2-8.4 16.5-16.7 25.5-24.2zM225.7 416c25.3 0 47.7-7 68.8-21 42.1-29.4 53.4-88.2 28.1-134.4-4.5-9-16-9.6-22.5-2l-25.2 29.3c-6.6 7.6-18.5 7.4-24.7-.5-17.3-22.1-49.1-62.4-65.3-83-5.4-6.9-15.2-8-21.5-1.9-18.3 17.8-51.5 56.8-51.5 104.3 0 68.6 50.6 109.2 113.7 109.2z"/></svg>
                     More Projects
                 </a>
@@ -174,7 +213,7 @@
     </section>
 
     <!-- Skills -->
-    <section class="h-auto py-14.75">
+    <section id="skills" class="h-auto py-14.75">
         <div class="max-w-301.5 w-[90%] mx-auto">
             <div class=" text-center max-w-169 mx-auto mb-7.5">
                 <h2 class="font-medium text-[clamp(16px,2.32vw,28px)] tracking-wide">Skills</h2>
@@ -272,7 +311,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="h-auto py-14.75">
+    <section id="contact" class="h-auto py-14.75">
         <div class="max-w-301.5 w-[90%] mx-auto">
             <div class=" text-center max-w-169 mx-auto mb-7.5">
                 <h2 class="font-medium text-[clamp(16px,2.32vw,28px)] tracking-wide">Contact</h2>
@@ -305,21 +344,21 @@
                             <label for="name" class="tracking-wide text-sm mb-1">
                                 Name
                             </label>
-                            <input x-model="name" type="text" name="name" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
+                            <input x-model="name" type="text" name="name" id="name" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
                             <p x-show="error.name" x-text="error.name" class="text-wp-red text-sm mt-1"></p>
                         </div>
                         <div class="flex flex-col mb-6">
-                            <label for="name" class="tracking-wide text-sm mb-1">
+                            <label for="email" class="tracking-wide text-sm mb-1">
                                 Email
                             </label>
-                            <input x-model="email" type="text" name="email" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
+                            <input x-model="email" type="email" name="email" id="email" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
                             <p x-show="error.email" x-text="error.email" class="text-wp-red text-sm mt-1"></p>
                         </div>
                         <div class="flex flex-col mb-6">
-                            <label for="name" class="tracking-wide text-sm mb-1">
+                            <label for="message" class="tracking-wide text-sm mb-1">
                                 Message
                             </label>
-                            <textarea x-model="message" name="message" cols="30" rows="4" class="tracking-wide py-2 px-3 bg-[#292929] outline-none"></textarea>
+                            <textarea x-model="message" name="message" id="message" cols="30" rows="4" class="tracking-wide py-2 px-3 bg-[#292929] outline-none"></textarea>
                             <p x-show="error.message" x-text="error.message" class="text-wp-red text-sm mt-1"></p>
                         </div>
                         <input type="text" x-model="website" class="hidden">
@@ -339,7 +378,7 @@
     <footer class="my-6">
         <div class="max-w-301.5 w-[90%] mx-auto">
             <div class=" flex items-center justify-between mb-2">
-                <a href="#" class="font-bold text-[1.1875rem]">
+                <a href="#home" class="font-bold text-[1.1875rem]">
                     @rnl_dev<span class="text-wp-red">.</span>
                 </a>
                 <div class="flex items-center gap-4">
@@ -370,6 +409,7 @@
         document.addEventListener('alpine:init', () => {
             Alpine.data('portfolio', () => ({
                 scrolled: false,
+                mobileNavOpen: false,
                 name: '',
                 email: '',
                 message: '',
