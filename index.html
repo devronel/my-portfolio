@@ -38,17 +38,18 @@
         ]
     }
     </script>
-  <script type="module" crossorigin src="/my-portfolio/assets/index-Bj-SCaNy.js"></script>
-  <link rel="stylesheet" crossorigin href="/my-portfolio/assets/index-CqsgOlCU.css">
+  <script type="module" crossorigin src="/my-portfolio/assets/index-B-VdxFC6.js"></script>
+  <link rel="stylesheet" crossorigin href="/my-portfolio/assets/index-DaWyOMjf.css">
 </head>
 <body x-data="portfolio()" @scroll.window="handleScroll" class="font-fira-code bg-wp-dark text-white">
 
     <!-- Nav -->
     <nav :class="scrolled ? 'bg-wp-dark border-b border-wp-red' : ''" class="fixed top-0 left-0 right-0 z-20 py-3">
         <div class="text-white max-w-301.5 w-[90%] mx-auto flex items-center justify-between">
-            <a href="#home" class="font-bold text-[1.1875rem]">@rnl_dev<span class="text-wp-red">.</span></a>
+            <a href="#home" class="font-bold text-[1.1875rem]">@rnl<span class="text-wp-red">.</span>code</a>
             <ul class="hidden sm:flex items-center gap-7 text-sm">
                 <li><a href="#about" class="hover:text-wp-red">About</a></li>
+                <li><a href="#experience" class="hover:text-wp-red">Experience</a></li>
                 <li><a href="#projects" class="hover:text-wp-red">Projects</a></li>
                 <li><a href="#skills" class="hover:text-wp-red">Skills</a></li>
                 <li><a href="#contact" class="hover:text-wp-red">Contact</a></li>
@@ -59,6 +60,7 @@
             <div x-show="mobileNavOpen" @click.outside="mobileNavOpen = false" class="absolute top-full left-0 right-0 bg-wp-dark border-b border-wp-red sm:hidden">
                 <ul class="flex flex-col items-center gap-4 py-4 text-sm">
                     <li><a href="#about" @click="mobileNavOpen = false" class="hover:text-wp-red">About</a></li>
+                    <li><a href="#experience" @click="mobileNavOpen = false" class="hover:text-wp-red">Experience</a></li>
                     <li><a href="#projects" @click="mobileNavOpen = false" class="hover:text-wp-red">Projects</a></li>
                     <li><a href="#skills" @click="mobileNavOpen = false" class="hover:text-wp-red">Skills</a></li>
                     <li><a href="#contact" @click="mobileNavOpen = false" class="hover:text-wp-red">Contact</a></li>
@@ -70,22 +72,19 @@
     <!-- Home -->
     <section id="home" class="relative min-h-screen pt-13.5 flex items-center justify-start bg-cover bg-no-repeat bg-[url(/images/home-background.webp)]">
         <div class=" max-w-225 w-[90%] mx-auto">
-            <p class="tracking-wider text-[12px] sm:text-sm mb-6 inline-flex items-center gap-1 bg-wp-red py-2.75 px-3 rounded-lg">
+            <p class="hero-badge tracking-wider text-[12px] sm:text-sm mb-6 inline-flex items-center gap-1 bg-wp-red py-2.75 px-3 rounded-lg">
                 <img width="19" height="19" src="/my-portfolio/images/angellist.svg" alt="">
                 Hi, I'm Ronel Florida
             </p>
-            <h1 class="text-[clamp(16px,1.896vw,27px)] tracking-wider mb-6 leading-6 md:leading-9">
+            <h1 class="hero-heading text-[clamp(16px,1.896vw,27px)] tracking-wider mb-6 leading-6 md:leading-9">
                 <span class="text-wp-red font-bold">Full-Stack Developer</span> with experience building responsive Front-end interfaces and Back-end
                 <span class="text-wp-red font-bold"> Web Applications.</span>
             </h1>
-            <a href="#projects" class="tracking-wider mb-6 py-2 px-4 inline-flex items-center gap-2 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 focus:outline-none">
+            <a href="#projects" class="hero-button tracking-wider mb-6 py-2 px-4 inline-flex items-center gap-2 bg-indigo-500 text-white text-sm font-semibold rounded-md shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 448 512"><path fill="rgb(255, 255, 255)" d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-242.7c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32L64 32zm32 96c0-17.7 14.3-32 32-32l160 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-160 0c-17.7 0-32-14.3-32-32l0-64zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
                 Projects
             </a>
             <div class="flex items-center gap-4">
-                <a href="https://web.facebook.com/ronelflorida28/" target="_blank" class="hover:text-wp-red">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l98.2 0 0-145.8-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 145.8 129 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32z"/></svg>
-                </a>
                 <a href="https://www.linkedin.com/in/ronelflorida/" target="_blank" class="hover:text-wp-red">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z"/></svg>
                 </a>
@@ -116,10 +115,10 @@
                         Who I am<span class=" text-wp-red">?</span>
                     </h3>
                     <p class="text-[clamp(12px,1.16vw,14px)] tracking-wide leading-6 mb-5">
-                        A Web Developer with a Bachelor's degree in Information Technology and hands-on experience building applications with the Laravel framework. I specialize in crafting responsive, user-friendly interfaces and am actively expanding my expertise into full-stack development.
+                        I'm a web developer with a degree in Information Technology and hands-on experience with Laravel. I've contributed to building real-world applications as part of collaborative development teams, and I'm always looking to grow.
                     </p>
                     <p class="text-[clamp(12px,1.16vw,14px)] tracking-wide leading-6 mb-5">
-                        I focus on writing clean, maintainable code and delivering intuitive user experiences that align with business goals. Whether working on the front end or diving into back-end logic, I approach every project with attention to detail and a commitment to quality.
+                        I enjoy building clean, user-friendly interfaces and I care about writing code that's readable and experiences that feel intuitive. Every project is a chance to learn something new and improve.
                     </p>
                     <p class="text-[clamp(12px,1.16vw,14px)] font-bold tracking-wide mb-5">
                         I'm always open to new opportunities and collaborations — let's build something great together.
@@ -129,8 +128,57 @@
                         Download CV
                     </a>
                 </div>
-                <div class="order-1 md:order-2 md:justify-self-center-safe">
-                    <img class="w-full" src="/my-portfolio/images/about/ronel_picture.jpg" alt="Image of Ronel Florida">
+                <div class="order-1 md:order-2 justify-self-center-safe">
+                    <div class="relative inline-block">
+                        <div class="absolute -top-2 -left-2 w-full h-full border-2 border-wp-red rounded-lg"></div>
+                        <div class="absolute -bottom-2 -right-2 w-16 h-16 border-b-2 border-r-2 border-wp-red rounded-br-lg"></div>
+                        <img class="relative w-full rounded-lg" src="/my-portfolio/images/about/ronel_picture.jpg" alt="Image of Ronel Florida">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="h-auto py-14.75">
+        <div class="max-w-301.5 w-[90%] mx-auto">
+            <div class=" text-center max-w-169 mx-auto mb-7.5">
+                <h2 class="font-medium text-[clamp(16px,2.32vw,28px)] tracking-wide">Work Experience</h2>
+                <p class="text-[clamp(12px,1.16vw,14px)] tracking-wide">
+                    A summary of my professional roles and the contributions I've made in each position
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border border-wp-red rounded-md py-6 px-5 relative">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-wp-red rounded-l-md"></div>
+                    <h4 class="font-bold text-[clamp(14px,1.5vw,18px)] tracking-wide mb-1">Full Stack Developer</h4>
+                    <p class="text-wp-red font-bold text-sm tracking-wide mb-1">Realholmes Property Inc.</p>
+                    <p class="text-[clamp(11px,1vw,13px)] text-gray-400 tracking-wide mb-3">Sept 2025 - Present</p>
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                        <span class="text-[11px] tracking-wide px-2 py-0.5 border border-gray-600 rounded text-gray-300">Laravel</span>
+                        <span class="text-[11px] tracking-wide px-2 py-0.5 border border-gray-600 rounded text-gray-300">Livewire</span>
+                        <span class="text-[11px] tracking-wide px-2 py-0.5 border border-gray-600 rounded text-gray-300">MySQL</span>
+                        <span class="text-[11px] tracking-wide px-2 py-0.5 border border-gray-600 rounded text-gray-300">Alpine JS</span>
+                        <span class="text-[11px] tracking-wide px-2 py-0.5 border border-gray-600 rounded text-gray-300">Tailwind CSS</span>
+                    </div>
+                    <p class="text-[clamp(12px,1.16vw,14px)] tracking-wide leading-6">
+                        Contributed to the development and maintenance of a real estate web platform built with Laravel, implementing subscription features including plan management and billing logic. Improved application performance by resolving frontend and backend issues to enhance system reliability and user experience.
+                    </p>
+                </div>
+                <div class="border border-wp-red rounded-md py-6 px-5 relative">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-wp-red rounded-l-md"></div>
+                    <h4 class="font-bold text-[clamp(14px,1.5vw,18px)] tracking-wide mb-1">Frontend Developer</h4>
+                    <p class="text-wp-red font-bold text-sm tracking-wide mb-1">Philippian Marketing Corporation</p>
+                    <p class="text-[clamp(11px,1vw,13px)] text-gray-400 tracking-wide mb-3">Jul 2023 - May 2024</p>
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                        <span class="text-[11px] tracking-wide px-2 py-0.5 border border-gray-600 rounded text-gray-300">Laravel</span>
+                        <span class="text-[11px] tracking-wide px-2 py-0.5 border border-gray-600 rounded text-gray-300">Livewire</span>
+                        <span class="text-[11px] tracking-wide px-2 py-0.5 border border-gray-600 rounded text-gray-300">Alpine JS</span>
+                        <span class="text-[11px] tracking-wide px-2 py-0.5 border border-gray-600 rounded text-gray-300">Tailwind CSS</span>
+                    </div>
+                    <p class="text-[clamp(12px,1.16vw,14px)] tracking-wide leading-6">
+                        Contributed to the development of ERP and company web applications by building responsive, user-friendly interfaces for desktop and mobile. Collaborated with backend developers to integrate frontend features and ensure seamless system functionality.
+                    </p>
                 </div>
             </div>
         </div>
@@ -233,28 +281,40 @@
                         </h5>
                     </div>
                     <div class="grid grid-cols-4 gap-4">
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/Html.png" alt="HTML Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/Html.png" alt="HTML Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">Html</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/css.png" alt="Css Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/css.png" alt="Css Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">Css</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/Javascript.png" alt="Javascript Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/Javascript.png" alt="Javascript Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">Javascript</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/React.png" alt="ReactJS Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/React.png" alt="ReactJS Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">React</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/tailwind.png" alt="TailwindCSS Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/tailwind.png" alt="TailwindCSS Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">Tailwind</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/alpine.png" alt="Alpine Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/alpine.png" alt="Alpine Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">Alpine</p>
                         </div>
                     </div>
@@ -269,20 +329,28 @@
                         </h5>
                     </div>
                     <div class="grid grid-cols-4 gap-4">
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/laravel.png" alt="Laravel Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/laravel.png" alt="Laravel Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">Laravel</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/livewire.png" alt="Livewire Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/livewire.png" alt="Livewire Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">Livewire</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/node.png" alt="Nodejs Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/node.png" alt="Nodejs Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">Node</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/Mysql.png" alt="MySql Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/Mysql.png" alt="MySql Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">MySql</p>
                         </div>
                     </div>
@@ -297,12 +365,16 @@
                         </h5>
                     </div>
                     <div class="grid grid-cols-4 gap-4">
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/git.png" alt="Git Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/git.png" alt="Git Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">Git</p>
                         </div>
-                        <div class="flex flex-col items-center">
-                            <img class="w-11 h-auto" src="/my-portfolio/images/skills/figma.png" alt="Figma Icon">
+                        <div class="skill-icon flex flex-col items-center">
+                            <div class="w-11 h-11 flex items-center justify-center">
+                                <img class="max-w-full max-h-full object-contain" src="/my-portfolio/images/skills/figma.png" alt="Figma Icon">
+                            </div>
                             <p class=" inline-block text-sm tracking-wide">Figma</p>
                         </div>
                     </div>
@@ -317,7 +389,7 @@
             <div class=" text-center max-w-169 mx-auto mb-7.5">
                 <h2 class="font-medium text-[clamp(16px,2.32vw,28px)] tracking-wide">Contact</h2>
             </div>
-            <div class="grid md:grid-cols-2 gap-14 md:gap-6 mb-6">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-6 mb-6">
                 <div>
                     <h5 class="text-[clamp(16px,1.65vw,20px)] text-center md:text-start mb-7 font-bold tracking-wide">
                         Get in touch<span class="text-wp-red">!</span>
@@ -334,7 +406,7 @@
                         </div>
                         <div class=" flex items-center gap-2">
                             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></svg>
-                            <p class="tracking-wide text-sm font-bold">+6391-2910-2641</p>
+                            <p class="tracking-wide text-sm font-bold">+6392-7849-4199</p>
                         </div>
                     </div>
                 </div>
@@ -345,21 +417,21 @@
                             <label for="name" class="tracking-wide text-sm mb-1">
                                 Name
                             </label>
-                            <input x-model="name" type="text" name="name" id="name" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
+                            <input x-model="name" type="text" name="name" id="name" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none w-full"/>
                             <p x-show="error.name" x-text="error.name" class="text-wp-red text-sm mt-1"></p>
                         </div>
                         <div class="flex flex-col mb-6">
                             <label for="email" class="tracking-wide text-sm mb-1">
                                 Email
                             </label>
-                            <input x-model="email" type="email" name="email" id="email" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none"/>
+                            <input x-model="email" type="email" name="email" id="email" required class="tracking-wide py-2 px-3 bg-[#292929] outline-none w-full"/>
                             <p x-show="error.email" x-text="error.email" class="text-wp-red text-sm mt-1"></p>
                         </div>
                         <div class="flex flex-col mb-6">
                             <label for="message" class="tracking-wide text-sm mb-1">
                                 Message
                             </label>
-                            <textarea x-model="message" name="message" id="message" cols="30" rows="4" class="tracking-wide py-2 px-3 bg-[#292929] outline-none"></textarea>
+                            <textarea x-model="message" name="message" id="message" cols="30" rows="4" class="tracking-wide py-2 px-3 bg-[#292929] outline-none w-full"></textarea>
                             <p x-show="error.message" x-text="error.message" class="text-wp-red text-sm mt-1"></p>
                         </div>
                         <input type="text" x-model="website" class="hidden">
@@ -380,12 +452,9 @@
         <div class="max-w-301.5 w-[90%] mx-auto">
             <div class=" flex items-center justify-between mb-2">
                 <a href="#home" class="font-bold text-[1.1875rem]">
-                    @rnl_dev<span class="text-wp-red">.</span>
+                    @rnl<span class="text-wp-red">.</span>code
                 </a>
-                <div class="flex items-center gap-4">
-                    <a href="https://web.facebook.com/ronelflorida28/" target="_blank" class="hover:text-wp-red">
-                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l98.2 0 0-145.8-52.8 0 0-78.2 52.8 0 0-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4l0 70.8c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2l0 27.8 83.6 0-14.4 78.2-69.3 0 0 145.8 129 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32z"/></svg>
-                    </a>
+            <div class="hero-socials flex items-center gap-4">
                     <a href="https://www.linkedin.com/in/ronelflorida/" target="_blank" class="hover:text-wp-red">
                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z"/></svg>
                     </a>
